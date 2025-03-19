@@ -76,27 +76,50 @@
         // Only use JavaScript to complete the following steps
 
         // Step 1: Create Function to Change Title and rewrite h1 element to "Celebrate Michigan Football!"
-        //function
+        function changeTitle() {
+            document.querySelector("h1").innerHTML = "Celebrate Michigan Football!";
+            // Step 2: log the message to the console
+            console.log("Title has been changed!");
+            // Step 3: style the background to color #003366
+            document.body.style.backgroundColor = "#003366";
+        }
 
-            //Step 2: log the message to the console
-
-
-        //Step 3: style the background to color #003366
+        let gameDayMessage = document.createElement("p");
+        gameDayMessage.textContent = "2023 Champions!";
 
         // Step 4: Add the correct ID for the button, create an element 'p' and add a message "2023 Champions!" to p
-        document.getElementById("add ID here").addEventListener("click", function() {
-
+        document.getElementById("addMessageButton").addEventListener("click", function() {
             document.getElementById("message").appendChild(gameDayMessage); // Add to the message div
         });
 
-        const playerItems = document.querySelectorAll("li");
+        const playerItems = document.querySelectorAll("li").length;
+        
         // Step 5: Use a conditional statement for playerItems. If there are more than 5 players, log a special message to the console "Go Blue, so many great players in one season!
+        if (playerItems > 5) {
+            console.log("Go Blue, so many great players in one season!");
+        }
 
-        //Try it out with length > 4
+        // Try it out with length > 4
+        if (playerItems > 4) {
+            console.log("Go Blue, so many great players in one season!");
+        }
 
         function displayInformation() {
             // Step 6: Update the three span elements using ONLY JavaScript
+            // Define new values.
+            const currentURL = window.location.href;
+            const numItems = document.querySelectorAll("*").length;
+            const date = new Date();
 
+            // Locate span objects.
+            let urlSpan = document.getElementById("URL");
+            let itemSpan = document.getElementById("items");
+            let dateSpan = document.getElementById("time");
+
+            // Update span html.
+            urlSpan.innerHTML = currentURL;
+            itemSpan.innerHTML = numItems;
+            dateSpan.innerHTML = date;
         }
     </script>
 </body>
